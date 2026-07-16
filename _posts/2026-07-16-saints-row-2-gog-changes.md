@@ -24,7 +24,7 @@ GOG, which was owned by CD Projekt at the time, came out of the blue in 2015 and
 
 Barring the obvious stuff, such as the removal of Steam DRM making the game DRM-free, they also seem to have shipped all languages with the game rather than having them locked behind an option to download like on Steam.
 
-Saints Row 2 on PC picks your PC's locale as the language. The game also supports the `forcelang_la` command-line argument, with `la` being your language of choice.
+Saints Row 2 on PC picks your PC's locale as the language. The game also supports the `forcelang_la` command-line argument, with `la` being your language of choice that the game supports.
 
 ### Changes done to the executable
 
