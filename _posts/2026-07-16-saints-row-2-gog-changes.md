@@ -38,7 +38,7 @@ Mon Feb 09 15:31:03 2009
 
 ### `LARGEADDRESSAWARE` enabled
 
-GOG patched the executable's PE header to enable the `LARGEADDRESSAWARE` flag, which allows 32-bit programs to use more than 2 GB of RAM (p to 4 GB on 64-bit versions of Windows, or 3 GB on supported 32-bit versions.
+GOG patched the executable's PE header to enable the `LARGEADDRESSAWARE` flag, which allows 32-bit programs to use more than 2 GB of RAM (up to 4 GB on 64-bit versions of Windows, or 3 GB on supported 32-bit versions.
 
 This change alone significantly improves the game's stability, despite the game not actually using dynamic memory that much. During initialization, the game pre-allocates specific amounts of memory into what it internally calls mempools, and the game's functions request memory from those pools, (specific mempools for chunks,models,city chunk and so on)
 
