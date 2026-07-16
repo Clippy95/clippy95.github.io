@@ -16,7 +16,9 @@ If you're just looking for a way to play the game, use [Juiced Patch](https://gi
 
 ## Background
 
-Saints Row 2 has been called one of the worst PC ports of its era *(although I personally disagree, there are worse)*, with issues such as cutscene objects becoming desynchronized, constant random crashing, and more than sub-par performance. All of these issues have been attributed to the company that ported the game to PC, CD Projekt Localisation Centre.
+Saints Row 2 has been called one of the worst PC ports of its era *(although I personally disagree, there are worse)*, with issues such as cutscene objects becoming desynchronized, constant random crashing, and more than sub-par performance. All of these issues have been attributed to the company that ported the game to PC, CD Projekt Localisation Centre (CDPLC).
+
+
 
 GOG, which was owned by CD Projekt at the time, came out of the blue in 2015 and re-released the game on its storefront. Despite no promises of enhancements being made, the release does have some edits applied to it.
 
@@ -40,7 +42,7 @@ GOG patched the executable's PE header to enable the `LARGEADDRESSAWARE` flag, w
 
 This change alone significantly improves the game's stability, despite the game not actually using dynamic memory that much. During initialization, the game pre-allocates specific amounts of memory into what it internally calls mempools, and the game's functions request memory from those pools, (specific mempools for chunks,models,city chunk and so on)
 
-Memory outside those pools is used in CD Projekt Localisation Centre's rendering implementation and even by their leftover debug metric system, which is always tracking in retail builds and was never stripped.
+Memory outside those pools is used in CDPLC's rendering implementation and even by their leftover debug metric system, which is always tracking in retail builds and was never stripped.
 
 This does not fix every crashing issue, but it does fix one of the most common ones.
 
@@ -48,7 +50,7 @@ This does not fix every crashing issue, but it does fix one of the most common o
 
 This one is rather peculiar. The game already comes with its own sub-par frame-rate limiter, but GOG implemented what is effectively going to be the third frame limiter.
 
-CD Projekt Localisation Centre's rendering implementation makes use of a command buffer to process DirectX 9 calls. The calls are made on the main game thread and then processed on a separate rendering thread after the main game thread has finished processing. GOG's edits appear to be purely assembly edits made to the executable.
+CDPLC's rendering implementation makes use of a command buffer to process DirectX 9 calls. The calls are made on the main game thread and then processed on a separate rendering thread after the main game thread has finished processing. GOG's edits appear to be purely assembly edits made to the executable.
 
 They injected this frame limiter into the code that processes a call to `IDirect3DDevice9::Present`.
 
